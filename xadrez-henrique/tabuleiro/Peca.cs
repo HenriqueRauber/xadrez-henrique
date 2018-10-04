@@ -1,4 +1,6 @@
-﻿namespace tabuleiro
+﻿using System;
+
+namespace tabuleiro
 {
     class Peca
     {
@@ -13,6 +15,11 @@
             this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0;
+        }
+
+        internal void incrementarQteMovimentos()
+        {
+            qteMovimentos++;
         }
     }
 }

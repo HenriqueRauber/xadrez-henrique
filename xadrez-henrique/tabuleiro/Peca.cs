@@ -48,5 +48,12 @@ namespace tabuleiro
             }
             return false;
         }
+        
+        internal bool podeMover(Posicao pos)
+        {
+            Peca p = tab.peca(pos);
+            return p == null || p.cor != cor;
+        }
+
     }
 }

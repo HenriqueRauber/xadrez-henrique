@@ -2,9 +2,9 @@
 using tabuleiro;
 using xadrez;
 
-namespace xadrez_henrique
+namespace _xadrez
 {
-    class Program
+    public class Program
     { 
         static void Main(string[] args)
         {

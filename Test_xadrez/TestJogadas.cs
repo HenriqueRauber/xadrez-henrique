@@ -98,7 +98,39 @@ namespace Test_xadrez
             }
         }
 
-        private void partida(params Jogada[] jogadas)
+
+        [TestMethod]
+        public void TestJogadas_RoquePequeno()
+        {
+            PartidaDeXadrez part = partida(new Jogada[]
+            {
+                new Jogada("e2","e4"),
+                new Jogada("a7","a6"),
+                new Jogada("f1","a6"),
+                new Jogada("b7","a6"),
+                new Jogada("g1","h3"),
+                new Jogada("a6","a5"),
+                new Jogada("e1","g1"),
+            });
+            //Ver se invertou o rei e a torre...
+        }
+
+        [TestMethod]
+        public void TestJogadas_RoqueGrande()
+        {
+            partida(new Jogada[]
+            {
+                new Jogada("e2","e4"),
+                new Jogada("a7","a6"),
+                new Jogada("f1","a6"),
+                new Jogada("b7","a6"),
+                new Jogada("g1","h3"),
+                new Jogada("a6","a5"),
+                new Jogada("e1","g1"),
+            });
+        }
+
+        private PartidaDeXadrez partida(params Jogada[] jogadas)
         {
 
             PartidaDeXadrez partida = new PartidaDeXadrez();
@@ -108,6 +140,7 @@ namespace Test_xadrez
                 partida.validarPosicaoDeDestino(jogada.Origem, jogada.Destino);
                 partida.realizaJogada(jogada.Origem, jogada.Destino);
             }
+            return partida;
         }
 
         private class Jogada

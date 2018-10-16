@@ -15,7 +15,6 @@ namespace Test_xadrez
             partida(new Jogada[]
             {
                 //ta verificando como bispo...
-                new Jogada("b2","b4"),
                 new Jogada("a2","a4"),
                 new Jogada("a7","a5"),
                 new Jogada("b2","b4"),

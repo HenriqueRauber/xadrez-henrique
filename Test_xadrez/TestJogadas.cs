@@ -98,6 +98,38 @@ namespace Test_xadrez
             }
         }
 
+        [TestMethod]
+        public void TestJogadas_JogadaEspecialEnPassant()
+        {
+            try
+            {
+                partida(new Jogada[]
+                {
+                    new Jogada("g2","g4"),
+                    new Jogada("b7","b5"),
+                    new Jogada("g4","g5"),
+                    new Jogada("b5","b4"),
+                    new Jogada("c2","c4"),
+
+                    //En passant:
+                    new Jogada("b4","c3"),
+
+                    new Jogada("d2","c3"),
+                    new Jogada("f7","f5"),
+                    //En passant:
+                    new Jogada("g5","f6"),
+
+                });
+            }
+            catch (TabuleiroException te)
+            {
+                if (te.Message != "Não há movimentos possíveis para a posição de origem escolhida!")
+                {
+                    throw;
+                }
+            }
+        }
+
 
         [TestMethod]
         public void TestJogadas_RoquePequeno()

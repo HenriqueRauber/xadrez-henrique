@@ -9,6 +9,11 @@ namespace xadrez
         {
         }
 
+        public override string ToString()
+        {
+            return "C";
+        }
+
         public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
@@ -39,30 +44,30 @@ namespace xadrez
                 mat[pos.linha, pos.coluna] = true;
             }
 
-            pos.definirValores(posicao.linha + 2, posicao.coluna + 1);
+            pos.definirValores(posicao.linha + 1, posicao.coluna + 2);
             if (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
-            pos.definirValores(posicao.linha - 2, posicao.coluna -1);
-            if (tab.posicaoValida(pos) && podeMover(pos))
+            pos.definirValores(posicao.linha + 2, posicao.coluna + 1);
+            if (tab.posicaoValida(pos) && podeMover(pos)) 
+            {
+                mat[pos.linha, pos.coluna] = true;
+            }
+
+            pos.definirValores(posicao.linha + 2, posicao.coluna - 1);
+            if (tab.posicaoValida(pos) && podeMover(pos)) 
             {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             pos.definirValores(posicao.linha + 1, posicao.coluna - 2);
-            if (tab.posicaoValida(pos) && podeMover(pos))
-            {
+            if (tab.posicaoValida(pos) && podeMover(pos)) {
                 mat[pos.linha, pos.coluna] = true;
             }
 
             return mat;
-        }
-
-        public override string ToString()
-        {
-            return "C";
         }
     }
 }

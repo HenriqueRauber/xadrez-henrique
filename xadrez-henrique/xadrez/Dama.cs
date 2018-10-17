@@ -9,6 +9,11 @@ namespace xadrez
         {
         }
 
+        public override string ToString()
+        {
+            return "D";
+        }
+
         public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
@@ -112,11 +117,6 @@ namespace xadrez
             }
 
             return mat;
-        }
-
-        public override string ToString()
-        {
-            return "D";
         }
     }
 }

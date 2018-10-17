@@ -91,7 +91,7 @@ namespace Test_xadrez
             }
             catch (TabuleiroException te)
             {
-                if (te.Message != "Posição de destino inválida!")
+                if (te.Message != "Não há movimentos possíveis para a posição de origem escolhida!")
                 {
                     throw;
                 }

@@ -9,6 +9,11 @@ namespace xadrez
         {
         }
 
+        public override string ToString()
+        {
+            return "P";
+        }
+
         private bool existeInimigo(Posicao pos)
         {
             Peca p = tab.peca(pos);
@@ -76,11 +81,6 @@ namespace xadrez
             }
 
             return mat;
-        }
-
-        public override string ToString()
-        {
-            return "P";
         }
     }
 }

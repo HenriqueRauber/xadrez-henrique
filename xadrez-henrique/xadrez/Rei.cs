@@ -12,6 +12,11 @@ namespace xadrez
             this.partida = partida;
         }        
 
+        public override string ToString()
+        {
+            return "R";
+        }
+
         private bool testeTorreParaRoque(Posicao pos)
         {
             Peca p = tab.peca(pos);
@@ -106,11 +111,6 @@ namespace xadrez
             #endregion
 
             return mat;
-        }
-
-        public override string ToString()
-        {
-            return "R";
         }
     }
 }
